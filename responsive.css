@@ -1,0 +1,56 @@
+/* =========================================
+   RESPONSIVE: phones and small tablets
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  /* Auth pages: hide purple side panel */
+  .auth-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-side {
+    display: none;
+  }
+
+  /* Sidebar becomes a slide-in drawer */
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-w) !important;
+  }
+
+  body.nav-open .sidebar {
+    transform: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  }
+
+  body.nav-open .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 85;
+    background: rgba(37, 36, 56, 0.45);
+  }
+
+  /* Content uses full width */
+  .main,
+  body.collapsed .main {
+    margin-left: 0;
+  }
+
+  body.collapsed .nav .label,
+  body.collapsed .nav .tag,
+  body.collapsed .brand span.name {
+    display: inline;
+  }
+
+  .topbar,
+  .content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
