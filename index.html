@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyHub AI</title>
+
+  <script type="module">
+    import { auth } from "./js/firebase-config.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+    // Send visitors to the right page
+    onAuthStateChanged(auth, (user) => {
+      location.replace(user ? "pages/dashboard.html" : "login.html");
+    });
+  </script>
+</head>
+
+<body>
+  <p style="padding: 24px; font-family: sans-serif;">Loading…</p>
+</body>
+</html>
